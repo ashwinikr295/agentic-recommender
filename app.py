@@ -649,7 +649,7 @@ if st.session_state["current_page"] == "home":
         Agentic Recommender Suite
       </h1>
       <p style="color:#94a3b8;font-size:1.1rem;max-width:600px;margin:auto;line-height:1.6;">
-        Choose an autonomous recommendation engine powered by hierarchical belief-state memory and real-time SQL reasoning loops.
+        Tired of scrolling for hours on weekends? Whether you want to watch a movie or play a game, choose an option below and find the perfect match for your mood!
       </p>
     </div>
     """, unsafe_allow_html=True)
