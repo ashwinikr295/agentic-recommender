@@ -4,18 +4,18 @@ An agentic recommendation suite built with **Streamlit**, **PyTorch**, and **SQL
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 *   **Dual-Engine Portals**:
-    *   🎮 **Video Games Portal**: Employs a deep sequential recommender system (Transformer/GRU fallback) trained on clickstream logs.
-    *   🎬 **Movies Portal**: Employs real-time SQL candidate filtering and keyword-extracted search boosting.
+    *   **Video Games Portal**: Employs a deep sequential recommender system (Transformer/GRU fallback) trained on clickstream logs.
+    *   **Movies Portal**: Employs real-time SQL candidate filtering and keyword-extracted search boosting.
 *   **Hierarchical Belief Memory**: Dynamically learns, scales, and decays user preferences across multiple genres in real-time based on click signals.
 *   **ReAct Agentic Reasoning Loop**: Parses user intent, fetches candidates, aligns recommendations with user memory, and drafts natural language reasoning explaining "why" each item was picked.
 *   **Interactive Agent Mind Dashboard**: Displays live execution steps, current active genre beliefs, and real-time Chain-of-Thought logs for complete execution transparency.
 
 ---
 
-## 🛠️ Architecture & Workflow
+## Architecture & Workflow
 
 The system executes recommendations through a structured 4-step control graph:
 
@@ -35,7 +35,7 @@ graph TD
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── app.py                 # Streamlit multi-page frontend and dashboard
@@ -50,7 +50,7 @@ graph TD
 
 ---
 
-## 💻 Local Setup & Execution
+## Local Setup & Execution
 
 ### Prerequisites
 *   Python 3.8+
@@ -76,7 +76,7 @@ graph TD
 
 ---
 
-## 👤 Developer
+## Developer
 *   **Name**: Ashwini Kumar
 *   **Role**: AI & Software Engineer | Full Stack Web Developer
 *   **GitHub**: [ashwinikr295](https://github.com/ashwinikr295)

@@ -12,6 +12,9 @@ venv/
 .venv/
 env/
 
+# IDE files
+.idea/
+
 # OS generated files
 .DS_Store
 Thumbs.db

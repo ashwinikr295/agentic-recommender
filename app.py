@@ -25,7 +25,7 @@ if hasattr(sys.stdout, "reconfigure"):
 # ── Page config (must be first Streamlit call) ────────────────────────────────
 st.set_page_config(
     page_title="Agentic Recommender",
-    page_icon="🎮",
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -43,37 +43,37 @@ st.markdown("""
 
 /* ── Global ── */
 html, body, [class*="css"]       { font-family: 'Inter', sans-serif; }
-.stApp                            { background: #0f0f23 !important; }
+.stApp                            { background: #0b0f19 !important; }
 p, li, span, label, div          { color: #e2e8f0; }
 
 /* ── Streamlit native overrides ── */
-[data-testid="stHeader"]          { background: #0f0f23; border-bottom: 1px solid #2a2a4a; }
-[data-testid="stToolbar"]         { background: #0f0f23; }
-[data-testid="stMainBlockContainer"] { background: #0f0f23; }
-h1,h2,h3,h4                      { color: #f1f5f9 !important; }
+[data-testid="stHeader"]          { background: #0b0f19; border-bottom: 1px solid #1e293b; }
+[data-testid="stToolbar"]         { background: #0b0f19; }
+[data-testid="stMainBlockContainer"] { background: #0b0f19; }
+h1,h2,h3,h4                      { color: #f8fafc !important; }
 .stCaption, .st-emotion-cache-16idsys p { color: #94a3b8 !important; }
 
 /* ── Sidebar ── */
-[data-testid="stSidebar"]         { background: #13132b !important; border-right: 1px solid #2a2a4a; }
+[data-testid="stSidebar"]         { background: #111827 !important; border-right: 1px solid #1e293b; }
 [data-testid="stSidebar"] p,
 [data-testid="stSidebar"] span,
 [data-testid="stSidebar"] label   { color: #cbd5e1 !important; }
 [data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2      { color: #f1f5f9 !important; }
+[data-testid="stSidebar"] h2      { color: #f8fafc !important; }
 
 /* Sidebar buttons */
 [data-testid="stSidebar"] .stButton > button {
-    background: #1e1e40 !important;
-    color: #c4b5fd !important;
-    border: 1px solid #4338ca !important;
+    background: #1e293b !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #334155 !important;
     border-radius: 8px !important;
     font-weight: 500 !important;
     transition: all 0.15s;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: #312e81 !important;
+    background: #334155 !important;
     color: #fff !important;
-    border-color: #7c3aed !important;
+    border-color: #475569 !important;
 }
 
 /* Selectbox — trigger box */
@@ -84,22 +84,22 @@ h1,h2,h3,h4                      { color: #f1f5f9 !important; }
     letter-spacing: 0.08em;
 }
 [data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-    background: #1e1e40 !important;
-    border: 1px solid #4338ca !important;
-    color: #f1f5f9 !important;
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
     border-radius: 8px !important;
 }
 /* Selected value text inside the trigger */
 [data-testid="stSelectbox"] div[data-baseweb="select"] span,
 [data-testid="stSelectbox"] div[data-baseweb="select"] div {
-    color: #f1f5f9 !important;
+    color: #f8fafc !important;
 }
 
 /* Selectbox — dropdown popup list */
 [data-baseweb="popover"] > div,
 [data-baseweb="menu"] {
-    background: #1a1a38 !important;
-    border: 1px solid #4338ca !important;
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
     border-radius: 10px !important;
 }
 
@@ -114,9 +114,9 @@ div[data-testid="stTooltipContent"] {
 div[data-baseweb="tooltip"] div,
 div[role="tooltip"] div,
 div[data-testid="stTooltipContent"] div {
-    background-color: #1a1a38 !important;
+    background-color: #1e293b !important;
     color: #ffffff !important;
-    border: 1px solid #4338ca !important;
+    border: 1px solid #334155 !important;
     border-radius: 8px !important;
 }
 div[data-baseweb="tooltip"] p,
@@ -130,111 +130,111 @@ div[data-testid="stTooltipContent"] span {
 /* Each option row */
 [data-baseweb="menu"] li,
 [role="option"] {
-    background: #1a1a38 !important;
+    background: #1e293b !important;
     color: #e2e8f0 !important;
     font-size: 0.88rem !important;
 }
 /* Hover */
 [data-baseweb="menu"] li:hover,
 [role="option"]:hover {
-    background: #312e81 !important;
+    background: #334155 !important;
     color: #ffffff !important;
     cursor: pointer;
 }
 /* Selected highlight */
 [role="option"][aria-selected="true"] {
-    background: #4338ca !important;
+    background: #2563eb !important;
     color: #ffffff !important;
 }
 
 /* ── Chat input ── */
 [data-testid="stChatInput"] textarea,
 [data-testid="stChatInputTextArea"] {
-    background: #1a1a38 !important;
-    color: #f1f5f9 !important;
-    border: 1.5px solid #4338ca !important;
-    border-radius: 12px !important;
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
     font-size: 0.9rem !important;
 }
 [data-testid="stChatInput"] textarea::placeholder { color: #64748b !important; }
 
 /* ── Metrics ── */
 [data-testid="stMetric"] {
-    background: #1a1a38;
-    border: 1px solid #2a2a4a;
-    border-radius: 12px;
+    background: #151e2e;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
     padding: 14px 16px !important;
 }
 [data-testid="stMetricLabel"]  { color: #94a3b8 !important; font-size: 0.75rem !important; text-transform: uppercase; letter-spacing: 0.07em; }
-[data-testid="stMetricValue"]  { color: #a78bfa !important; font-size: 1.5rem !important; font-weight: 700 !important; }
+[data-testid="stMetricValue"]  { color: #38bdf8 !important; font-size: 1.5rem !important; font-weight: 700 !important; }
 
 /* ── Progress bars ── */
-[data-testid="stProgressBar"] > div { background: #1e1e40 !important; border-radius: 99px; }
-[data-testid="stProgressBar"] > div > div { background: linear-gradient(90deg, #7c3aed, #06b6d4) !important; }
-.stProgress > div > div > div > div { background: linear-gradient(90deg, #7c3aed, #a78bfa) !important; }
+[data-testid="stProgressBar"] > div { background: #1e293b !important; border-radius: 99px; }
+[data-testid="stProgressBar"] > div > div { background: linear-gradient(90deg, #2563eb, #38bdf8) !important; }
+.stProgress > div > div > div > div { background: linear-gradient(90deg, #2563eb, #38bdf8) !important; }
 
 /* ── Expanders ── */
 [data-testid="stExpander"] {
-    background: #13132b !important;
-    border: 1px solid #3730a3 !important;
-    border-radius: 12px !important;
+    background: #151e2e !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 10px !important;
 }
 /* Summary row */
 [data-testid="stExpander"] > details > summary {
-    background: #1e1b4b !important;
-    border-radius: 12px !important;
+    background: #1e293b !important;
+    border-radius: 10px !important;
     padding: 10px 14px !important;
-    color: #e0e7ff !important;
-    font-weight: 700 !important;
+    color: #f8fafc !important;
+    font-weight: 600 !important;
     font-size: 0.88rem !important;
     letter-spacing: 0.01em;
 }
 [data-testid="stExpander"] > details > summary:hover {
-    background: #2d2a72 !important;
+    background: #334155 !important;
     color: #fff !important;
 }
 [data-testid="stExpander"] summary p,
 [data-testid="stExpander"] summary span {
-    color: #e0e7ff !important;
-    font-weight: 700 !important;
+    color: #f8fafc !important;
+    font-weight: 600 !important;
 }
-[data-testid="stExpander"] summary svg { stroke: #a78bfa !important; fill: #a78bfa !important; }
+[data-testid="stExpander"] summary svg { stroke: #38bdf8 !important; fill: #38bdf8 !important; }
 
 /* ── Divider ── */
-hr { border-color: #2a2a4a !important; }
+hr { border-color: #1e293b !important; }
 
 /* ── Spinner ── */
-.stSpinner > div { border-top-color: #7c3aed !important; }
+.stSpinner > div { border-top-color: #2563eb !important; }
 
 /* ── Main content area buttons (Load more, etc.) ── */
 [data-testid="stMainBlockContainer"] .stButton > button,
 .stButton > button {
-    background: linear-gradient(135deg, #312e81, #4338ca) !important;
+    background: #2563eb !important;
     color: #ffffff !important;
-    border: 1px solid #6366f1 !important;
-    border-radius: 10px !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 8px !important;
     font-weight: 600 !important;
     font-size: 0.88rem !important;
-    padding: 10px 18px !important;
+    padding: 9px 16px !important;
     transition: all 0.15s ease;
 }
 .stButton > button:hover {
-    background: linear-gradient(135deg, #4338ca, #7c3aed) !important;
-    border-color: #a78bfa !important;
+    background: #1d4ed8 !important;
+    border-color: #60a5fa !important;
     color: #ffffff !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(124,58,237,0.35) !important;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.3) !important;
 }
 /* Preserve sidebar button override */
 [data-testid="stSidebar"] .stButton > button {
-    background: #1e1e40 !important;
-    color: #c4b5fd !important;
-    border: 1px solid #4338ca !important;
+    background: #1e293b !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #334155 !important;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: #312e81 !important;
+    background: #334155 !important;
     color: #fff !important;
-    border-color: #7c3aed !important;
+    border-color: #475569 !important;
     transform: none;
     box-shadow: none !important;
 }
@@ -249,9 +249,9 @@ hr { border-color: #2a2a4a !important; }
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #818cf8;
+    color: #38bdf8;
     padding: 8px 0 6px;
-    border-bottom: 2px solid #312e81;
+    border-bottom: 1px solid #1e293b;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -260,33 +260,24 @@ hr { border-color: #2a2a4a !important; }
 
 /* Game card */
 .game-card {
-    background: linear-gradient(135deg, #1a1a38 0%, #1e1b4b 100%);
-    border-radius: 14px;
-    padding: 18px 20px;
+    background: #151e2e;
+    border-radius: 10px;
+    padding: 16px 18px;
     margin: 10px 0;
-    border-left: 4px solid #7c3aed;
-    box-shadow: 0 4px 20px rgba(79,70,229,0.18);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    border: 1px solid #1e293b;
+    border-left: 3px solid #2563eb;
+    box-shadow: none;
+    transition: border-color 0.15s ease;
     position: relative;
     overflow: hidden;
 }
 .game-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 36px rgba(124,58,237,0.28);
-}
-.game-card::after {
-    content: "";
-    position: absolute;
-    top: -20px; right: -20px;
-    width: 90px; height: 90px;
-    background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
+    border-color: #3b82f6;
 }
 .card-title {
     font-size: 1.05rem;
-    font-weight: 700;
-    color: #c4b5fd;
+    font-weight: 600;
+    color: #f8fafc;
     margin-bottom: 6px;
     line-height: 1.3;
 }
@@ -299,69 +290,68 @@ hr { border-color: #2a2a4a !important; }
     align-items: center;
 }
 .badge {
-    border-radius: 20px;
-    padding: 3px 11px;
+    border-radius: 6px;
+    padding: 2px 9px;
     font-size: 0.73rem;
     font-weight: 500;
     white-space: nowrap;
     border: 1px solid;
 }
-.badge-genre  { background: #1e1b4b; border-color: #6366f1; color: #a5b4fc; }
-.badge-price  { background: #052e16; border-color: #16a34a; color: #4ade80; }
-.badge-rating { background: #431407; border-color: #b45309; color: #fcd34d; }
+.badge-genre  { background: #1e293b; border-color: #334155; color: #cbd5e1; }
+.badge-price  { background: #064e3b; border-color: #059669; color: #34d399; }
+.badge-rating { background: #451a03; border-color: #d97706; color: #fbbf24; }
 .card-pitch   { font-size: 0.84rem; color: #94a3b8; line-height: 1.55; }
 .rank-pill {
     position: absolute;
     top: 14px; right: 16px;
-    background: linear-gradient(135deg, #7c3aed, #4338ca);
+    background: #2563eb;
     color: #fff;
     font-size: 0.7rem;
-    font-weight: 800;
-    border-radius: 20px;
-    padding: 3px 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 2px 9px;
     letter-spacing: 0.04em;
 }
 
 /* Chat bubbles */
 .user-bubble {
-    background: linear-gradient(135deg, #4338ca, #7c3aed);
+    background: #2563eb;
     color: #fff;
-    border-radius: 18px 18px 4px 18px;
-    padding: 11px 16px;
+    border-radius: 12px 12px 2px 12px;
+    padding: 10px 14px;
     margin: 6px 0;
     max-width: 84%;
     margin-left: auto;
     font-size: 0.9rem;
     font-weight: 500;
-    box-shadow: 0 3px 14px rgba(124,58,237,0.35);
     line-height: 1.5;
 }
 .agent-bubble {
-    background: #1a1a38;
+    background: #151e2e;
     color: #e2e8f0;
-    border-radius: 18px 18px 18px 4px;
-    padding: 11px 16px;
+    border-radius: 12px 12px 12px 2px;
+    padding: 10px 14px;
     margin: 6px 0;
     max-width: 84%;
     font-size: 0.88rem;
-    border: 1px solid #312e81;
+    border: 1px solid #1e293b;
     line-height: 1.55;
 }
 
 /* Reasoning box */
 .reasoning-box {
-    background: #13132b;
-    border: 1px solid #4338ca;
-    border-radius: 12px;
-    padding: 16px 20px;
+    background: #151e2e;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 14px 18px;
     font-size: 0.88rem;
-    color: #e0e7ff;
-    line-height: 1.68;
+    color: #cbd5e1;
+    line-height: 1.6;
     margin-bottom: 14px;
 }
 
 /* Execution log */
-.log-graph  { color: #818cf8; font-weight: 700; }
+.log-graph  { color: #38bdf8; font-weight: 600; }
 .log-data   { color: #34d399; }
 .log-warn   { color: #fbbf24; }
 .log-info   { color: #94a3b8; }
@@ -371,23 +361,16 @@ hr { border-color: #2a2a4a !important; }
 
 /* Portal Cards */
 .portal-card {
-    background: linear-gradient(135deg, #13132b 0%, #1e1e40 100%);
-    border: 1px solid #3730a3;
-    border-radius: 18px;
-    padding: 30px 24px;
-    text-align: center;
-    transition: all 0.22s ease-in-out;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    background: #151e2e;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+    transition: border-color 0.15s ease;
     margin-bottom: 12px;
 }
 .portal-card:hover {
-    transform: translateY(-5px);
-    border-color: #7c3aed;
-    box-shadow: 0 12px 32px rgba(124,58,237,0.22);
-}
-.portal-icon {
-    font-size: 3.8rem;
-    margin-bottom: 10px;
+    border-color: #2563eb;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -418,18 +401,19 @@ _init_session()
 # ══════════════════════════════════════════════════════════════════════════════
 
 GENRE_ICONS = {
-    "Action": "⚔️", "Adventure": "🗺️", "RPG": "🐉", "Strategy": "♟️",
-    "Simulation": "🏙️", "Sports": "⚽", "Racing": "🏎️", "Horror": "👻",
-    "Puzzle": "🧩", "Platformer": "🍄", "Fighting": "🥊", "Shooter": "🔫",
-    "MMORPG": "🌐", "Roguelike": "🎲", "Sandbox": "🏗️", "Stealth": "🕵️",
-    "Survival": "🏕️", "Visual Novel": "📖", "Rhythm": "🎵", "Card Game": "🃏",
+    # Games
+    "Action": "", "Adventure": "", "RPG": "", "Strategy": "",
+    "Simulation": "", "Sports": "", "Racing": "", "Horror": "",
+    "Puzzle": "", "Platformer": "", "Fighting": "", "Shooter": "",
+    "MMORPG": "", "Roguelike": "", "Sandbox": "", "Stealth": "",
+    "Survival": "", "Visual Novel": "", "Rhythm": "", "Card Game": "",
     # Movie genres
-    "Sci-Fi": "🚀", "Animation": "🧸", "Romance": "💖", "Comedy": "😂",
-    "Fantasy": "🔮", "Thriller": "🍿", "Drama": "🎭",
+    "Sci-Fi": "", "Animation": "", "Romance": "", "Comedy": "",
+    "Fantasy": "", "Thriller": "", "Drama": "",
 }
 
 def _genre_icon(genre: str) -> str:
-    return GENRE_ICONS.get(genre, "🎮")
+    return GENRE_ICONS.get(genre, "")
 
 def _stars(rating: float) -> str:
     full  = int(round(rating))
@@ -441,7 +425,6 @@ def _price_str(price: float) -> str:
 
 def _render_card(item: dict, rank: int, media_type: str = "games") -> str:
     is_movie = (media_type == "movies")
-    icon  = "🎬" if is_movie else _genre_icon(item["genre"])
     price = "Free" if item["price"] == 0.0 else (f"Rent ${item['price']:.2f}" if is_movie else f"${item['price']:.2f}")
     stars = _stars(item["rating"])
     tags  = ", ".join(item.get("tags", [])[:3])
@@ -462,7 +445,7 @@ def _render_card(item: dict, rank: int, media_type: str = "games") -> str:
     return f"""
 <div class="game-card">
   <span class="rank-pill">#{rank}</span>
-  <div class="card-title">{icon} {item['title']}</div>
+  <div class="card-title">{item['title']}</div>
   <div class="card-meta">
     <span class="badge badge-genre">{item['genre']}</span>
     <span class="badge badge-price">{price}</span>
@@ -489,74 +472,31 @@ def _render_log_line(line: str) -> str:
 # ══════════════════════════════════════════════════════════════════════════════
 
 with st.sidebar:
-    st.markdown("## 🔮 Agentic Portal")
-    st.markdown("*Autonomous Dynamic Personalization Engine*")
+    st.markdown("## Personalization Engine")
+    st.markdown("*Clickstream Analytics & Recommender System*")
     st.divider()
     
     # Back to home button
     if st.session_state["current_page"] != "home":
-        if st.button("🏠 Back to Home", use_container_width=True, key="back_to_home_btn"):
+        if st.button("Back to Home", use_container_width=True, key="back_to_home_btn"):
             st.session_state["current_page"] = "home"
             st.session_state["messages"] = []
             st.session_state["last_state"] = None
             st.rerun()
         st.divider()
 
-    # ── Built-in personas ────────────────────────────────────────────────────
-    BASE_PERSONAS = {
-        "🎮 Pradeep  — Action & Shooter fan":     42,
-        "🐉 Maya  — RPG & Adventure lover":     7,
-        "👻 Aditya   — Horror & Survival buff":    15,
-        "♟️ Ravi — Strategy & Puzzle master":  23,
-        "🎵 Vivek — Rhythm & Card games fan":   88,
-        "🏕️ Ash — Survival & Sandbox player": 100,
-    }
-
-    # Merge with any user-created personas (stored in session)
-    custom       = st.session_state.get("custom_personas", {})
-    all_personas = {**BASE_PERSONAS, **custom}
-
-    # Apply a pending persona selection BEFORE the widget is created
-    pending = st.session_state.pop("pending_persona", None)
-    if pending and pending in all_personas:
-        st.session_state["persona_select"] = pending
-
-    persona_name = st.selectbox(
-        "Who are you?",
-        options=list(all_personas.keys()),
-        key="persona_select",
-        help=(
-            "Built-in profiles have viewing history. "
-            "New profiles start fresh — watch the engine learn your taste!"
-        ),
-    )
-    user_id = all_personas[persona_name]
-    is_new  = persona_name in custom
-    badge   = "🆕 Fresh profile — starts with no history" if is_new else f"Internal ID: `user #{user_id}` · has prior history"
-    st.caption(badge)
-
-    # ── Create new user ───────────────────────────────────────────────────────
-    st.divider()
-    st.markdown("**Create a new profile**")
-    new_name = st.text_input(
-        "Your name",
-        placeholder="e.g. Priya, Arjun, Sam2…",
-        key="new_user_name_input",
+    # ── User Profile ──────────────────────────────────────────────────────────
+    st.markdown("**User Profile**")
+    user_name = st.text_input(
+        "User Profile Name",
+        value="",
+        placeholder="Enter your name (e.g. Rahul, Priya)...",
+        key="user_profile_name_input",
         label_visibility="collapsed",
     )
-    if st.button("➕ Create profile", use_container_width=True, key="create_user_btn"):
-        name = new_name.strip()
-        if not name:
-            st.warning("Please enter a name first.")
-        else:
-            uid   = 501 + (hash(name.lower()) % 9499)  # stable ID 501-10000
-            label = f"✨ {name}  — new profile"
-            st.session_state["custom_personas"][label] = uid
-            st.session_state["pending_persona"] = label
-            st.session_state["messages"]        = []
-            st.session_state["last_state"]      = None
-            st.session_state["cards_shown"]     = 4
-            st.rerun()
+    clean_name = user_name.strip() if user_name.strip() else "Guest User"
+    user_id = 1 + (abs(hash(clean_name.lower())) % 500)
+    st.caption(f"Active Profile ID: `User #{user_id}` · `{clean_name}`")
 
     # Only show these options if not on Home Page
     if st.session_state["current_page"] != "home":
@@ -583,21 +523,21 @@ with st.sidebar:
                 st.session_state["prefill_query"] = q
 
         st.divider()
-        st.markdown(f"**Engine Config**")
-        st.caption(f"Max steps: `{MAX_STEPS}` · Top-K: `10`")
+        st.markdown(f"**Analytics & Model Config**")
+        st.caption(f"Clickstream events: `58,508` · Baseline CTR: `56.98%`")
         if st.session_state["current_page"] == "movies":
-            st.caption("DB: `recommender.db` · Model: `PopularityBaseline`")
+            st.caption("Database: `recommender.db` · Model: `PopularityBaseline`")
         else:
-            st.caption("DB: `recommender.db` · Model: `GRUSeqRec`")
+            st.caption("Database: `recommender.db` · Model: `GRUSeqRec`")
 
-        if st.button("🗑️ Clear conversation", use_container_width=True):
+        if st.button("Clear conversation", use_container_width=True):
             st.session_state["messages"]   = []
             st.session_state["last_state"] = None
             st.rerun()
 
     # ── Developer Profile ───────────────────────────────────────────────────
     st.divider()
-    st.markdown("👤 **Developer Profile**")
+    st.markdown("**Developer Profile**")
     
     # Load developer configuration dynamically to allow user-level editing and bypass filters
     import json
@@ -607,25 +547,25 @@ with st.sidebar:
     except Exception:
         dev_config = {
             "name": "Ashwini Kumar",
-            "role": "AI & Software Engineer | Full Stack Web Developer  ",
+            "role": "Data Analyst | AI & Data Science Engineer",
             "github": "https://github.com/ashwinikr295",
             "linkedin": "https://www.linkedin.com/in/ashwini-kumar-6928a527a/"
         }
 
     st.markdown(
         f"""
-        <div style="background: linear-gradient(135deg, #1e1e40 0%, #111126 100%); 
-                    padding: 14px; border-radius: 12px; border: 1.5px solid #4338ca; 
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.25); font-family: 'Inter', sans-serif;
+        <div style="background: #151e2e; 
+                    padding: 14px; border-radius: 10px; border: 1px solid #1e293b; 
+                    font-family: 'Inter', sans-serif;
                     margin-top: 5px;">
-          <div style="font-weight: 800; color: #c4b5fd; font-size: 0.95rem; margin-bottom: 2px;">{dev_config.get('name', 'Ashwini Kumar')}</div>
-          <div style="color: #94a3b8; font-size: 0.78rem; font-weight: 500; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">{dev_config.get('role', 'AI & Software Engineer | Full Stack Web Developer')}</div>
+          <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem; margin-bottom: 2px;">{dev_config.get('name', 'Ashwini Kumar')}</div>
+          <div style="color: #94a3b8; font-size: 0.78rem; font-weight: 500; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">{dev_config.get('role', 'Data Analyst | AI & Data Science Engineer')}</div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem;">
             <a href="{dev_config.get('github', 'https://github.com/ashwinikr295')}" target="_blank" style="color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-              <span>🐈</span> <span style="border-bottom: 1px dashed #6366f1;">GitHub Portfolio</span>
+              <span style="border-bottom: 1px dashed #3b82f6;">GitHub Portfolio</span>
             </a>
             <a href="{dev_config.get('linkedin', 'https://www.linkedin.com/in/ashwini-kumar-6928a527a/')}" target="_blank" style="color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-              <span>💼</span> <span style="border-bottom: 1px dashed #6366f1;">LinkedIn Profile</span>
+              <span style="border-bottom: 1px dashed #3b82f6;">LinkedIn Profile</span>
             </a>
           </div>
         </div>
@@ -644,28 +584,27 @@ with st.sidebar:
 
 if st.session_state["current_page"] == "home":
     st.markdown("""
-    <div style="text-align:center;padding:40px 0 20px;">
-      <h1 style="font-size:2.8rem;font-weight:800;background:linear-gradient(90deg, #7c3aed, #06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;">
-        Agentic Recommender Suite
+    <div style="padding: 24px 0 24px;">
+      <h1 style="font-size: 2rem; font-weight: 700; color: #f8fafc; margin-bottom: 6px;">
+        Recommendation Portals
       </h1>
-      <p style="color:#94a3b8;font-size:1.1rem;max-width:600px;margin:auto;line-height:1.6;">
-        Tired of scrolling for hours on weekends? Whether you want to watch a movie or play a game, choose an option below and find the perfect match for your mood!
+      <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 24px;">
+        Select an engine below to start exploring personalized recommendations.
       </p>
     </div>
     """, unsafe_allow_html=True)
     
-    col1, col2 = st.columns(2, gap="large")
+    col1, col2 = st.columns(2, gap="medium")
     with col1:
         st.markdown("""
         <div class="portal-card">
-          <div class="portal-icon">🎮</div>
-          <h2 style="margin: 12px 0 6px;color:#c4b5fd !important;font-weight:800;">Video Games Portal</h2>
-          <p style="color:#94a3b8;font-size:0.88rem;line-height:1.6;margin-bottom:20px;min-height:80px;">
-            Personalized game recommendations using a deep <b>GRUSeqRec PyTorch</b> model trained on synthetic clickstreams, aligned with your live active genre interests.
+          <h3 style="margin: 0 0 8px 0; color: #f1f5f9; font-weight: 600; font-size: 1.25rem;">Games Portal</h3>
+          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+            Personalized video game recommendations trained on user interaction patterns and live genre interests.
           </p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("🚀 Launch Games Engine", key="launch_games", use_container_width=True):
+        if st.button("Open Games Portal", key="launch_games", use_container_width=True):
             st.session_state["current_page"] = "games"
             st.session_state["messages"] = []
             st.session_state["last_state"] = None
@@ -674,14 +613,13 @@ if st.session_state["current_page"] == "home":
     with col2:
         st.markdown("""
         <div class="portal-card">
-          <div class="portal-icon">🎬</div>
-          <h2 style="margin: 12px 0 6px;color:#a5b4fc !important;font-weight:800;">Movies Portal</h2>
-          <p style="color:#94a3b8;font-size:0.88rem;line-height:1.6;margin-bottom:20px;min-height:80px;">
-            Explore and filter a database of <b>8,000+ TMDB movies</b>. Powered by keyword-extracted genre tags and real-time popularity-based candidate seeding.
+          <h3 style="margin: 0 0 8px 0; color: #f1f5f9; font-weight: 600; font-size: 1.25rem;">Movies Portal</h3>
+          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+            Search and filter a catalog of 8,000+ movies by genre, rating, and rental price.
           </p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("🚀 Launch Movies Engine", key="launch_movies", use_container_width=True):
+        if st.button("Open Movies Portal", key="launch_movies", use_container_width=True):
             st.session_state["current_page"] = "movies"
             st.session_state["messages"] = []
             st.session_state["last_state"] = None
@@ -695,8 +633,8 @@ else:
     
     # ── SECTION 1 — CHAT INTERFACE ──────────────────────────────────────────
     with col_chat:
-        portal_title = "🎬 Movie Recommender Chat" if is_movie else "🎮 Game Recommender Chat"
-        st.markdown(f'<div class="section-header">💬 {portal_title}</div>',
+        portal_title = "Movie Recommender Chat" if is_movie else "Game Recommender Chat"
+        st.markdown(f'<div class="section-header">{portal_title}</div>',
                     unsafe_allow_html=True)
     
         # Conversation history
@@ -774,7 +712,7 @@ else:
                         reply = opener
                         if constraint_str:
                             reply += f" ({constraint_str})"
-                        reply += f". {picks}. Avg rating: ⭐ {avg_rating:.1f}. Check the right panel for details!"
+                        reply += f". {picks}. Avg rating: {avg_rating:.1f}. Check the right panel for details!"
     
                     st.session_state["messages"].append(
                         {"role": "assistant", "content": reply}
@@ -784,23 +722,21 @@ else:
                 except Exception as exc:
                     st.session_state["messages"].append(
                         {"role": "assistant",
-                         "content": f"⚠️ Error: {exc}"}
+                         "content": f"Error: {exc}"}
                     )
     
             st.rerun()
     
     # ── SECTION 2 — DYNAMIC PAGE LAYOUT (recommendations) ─────────────────────
     with col_recs:
-        st.markdown('<div class="section-header">🎯 Dynamic Page Layout</div>',
+        st.markdown('<div class="section-header">Dynamic Page Layout</div>',
                     unsafe_allow_html=True)
     
         state: AgentState | None = st.session_state.get("last_state")
     
         if state is None:
-            default_icon = "🎬" if is_movie else "🎮"
             st.markdown(f"""
             <div style="text-align:center;padding:60px 20px;color:#3d3d6b">
-              <div style="font-size:3rem">{default_icon}</div>
               <div style="font-size:1rem;margin-top:12px">
                 Ask for a {media_lbl} recommendation to see personalized results here.
               </div>
@@ -810,7 +746,7 @@ else:
             # Reasoning box
             if state.reasoning:
                 st.markdown(
-                    f'<div class="reasoning-box">💡 {state.reasoning}</div>',
+                    f'<div class="reasoning-box">{state.reasoning}</div>',
                     unsafe_allow_html=True,
                 )
     
@@ -818,13 +754,13 @@ else:
             intent = state.parsed_intent
             chips = []
             if intent.get("genre"):
-                chips.append(f"🎭 {intent['genre']}")
+                chips.append(f"{intent['genre']}")
             if intent.get("max_price") is not None:
-                chips.append(f"💰 ≤ ${intent['max_price']:.0f}")
+                chips.append(f"≤ ${intent['max_price']:.0f}")
             if intent.get("min_rating"):
-                chips.append(f"⭐ ≥ {intent['min_rating']}")
+                chips.append(f"≥ {intent['min_rating']}")
             if intent.get("tags"):
-                chips += [f"🏷️ {t}" for t in intent["tags"]]
+                chips += [f"{t}" for t in intent["tags"]]
     
             if chips:
                 chip_html = " ".join(

@@ -19,9 +19,9 @@ if hasattr(sys.stdout, "reconfigure"):
 
 DB_PATH = Path(__file__).parent / "recommender.db"
 
-PASS = "✅ PASS"
-FAIL = "❌ FAIL"
-INFO = "ℹ️  INFO"
+PASS = "PASS"
+FAIL = "FAIL"
+INFO = "INFO"
 
 
 def section(title: str) -> None:
@@ -231,7 +231,7 @@ def main() -> None:
     print(f"  {INFO}  Sessions     : {n_sessions:,}")
     print(f"  {INFO}  Events       : {n_events:,}")
     print(f"  {INFO}  DB size      : {size_mb:.2f} MB")
-    print(f"\n  ✅  Verification complete — database looks healthy!")
+    print(f"\n  Verification complete — database looks healthy!")
     print("=" * 60)
 
 
